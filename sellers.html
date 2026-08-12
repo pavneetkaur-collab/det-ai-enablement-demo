@@ -165,9 +165,9 @@ body{font-family:'Salesforce Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',A
   var visited = sessionStorage.getItem('sf_seller_counted');
   if (!visited) {
     sessionStorage.setItem('sf_seller_counted', '1');
-    var log = 'https://docs.google.com/forms/d/e/FORM_ID/formResponse?entry.0=' + encodeURIComponent(uid) + '&entry.1=' + encodeURIComponent(new Date().toISOString()) + '&entry.2=' + encodeURIComponent(document.referrer || 'direct');
+    var url = 'https://docs.google.com/forms/d/e/1FAIpQLSeZMs8XCJELw_qUw3zjszhq4Yqm3wjDOL8KwoEeO8YztjmVgw/formResponse?entry.1260831470=' + encodeURIComponent(uid);
     var img = new Image();
-    img.src = log;
+    img.src = url;
   }
 })();
 </script>
