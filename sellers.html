@@ -58,6 +58,9 @@ body{font-family:'Salesforce Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',A
 
 .sf-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:6px;padding:6px 12px;font-size:11px;font-weight:600;color:#B4D6F0;margin-top:20px}
 .sf-badge .dot{width:8px;height:8px;background:#04E1CB;border-radius:50%}
+.view-counter{display:inline-flex;align-items:center;gap:8px;background:rgba(4,225,203,0.08);border:1px solid rgba(4,225,203,0.2);border-radius:20px;padding:8px 16px;font-size:13px;font-weight:700;color:#04E1CB;margin-bottom:8px}
+.view-counter .dot{width:8px;height:8px;background:#04E1CB;border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
 </style>
 </head>
 <body>
@@ -160,7 +163,7 @@ body{font-family:'Salesforce Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',A
     <p>Everything you need to answer "How does Salesforce do it?" — white papers, the ADLC playbook, Customer Zero canvas, and more.</p>
     <div class="cta-links">
       <a href="https://salesforce.enterprise.slack.com/docs/T01G0063H29/F0AAG8CSLHX" class="cta-link">SF on SF Canvas</a>
-      <a href="https://salesforce.enterprise.slack.com/docs/T01G0063H29/F0AAG8CSLHX" class="cta-link secondary">Agentic Enterprise Playbook (C0 Story Ch. 1)</a>
+      <a href="https://docs.google.com/presentation/d/1bYN5RsRIUkSWRvZsNUIsISoklSCxs4vayAujzOkSV2w/edit?slide=id.g37016d44d37_0_0#slide=id.g37016d44d37_0_0" class="cta-link secondary">Agentic Enterprise Playbook (C0 Story Ch. 1)</a>
     </div>
   </div>
 
@@ -186,7 +189,19 @@ body{font-family:'Salesforce Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',A
 
 </div>
 
-<div class="footer">Salesforce on Salesforce | Customer Zero | Digital Employee Transformation<br>Questions? Reach us in #customer-zero-seller-enablement</div>
+<div class="footer">
+  <div class="view-counter"><span class="dot"></span> <span id="views">-</span> sellers have viewed this guide</div>
+  <div style="margin-top:12px">Salesforce on Salesforce | Customer Zero | Digital Employee Transformation<br>Questions? Reach us in #customer-zero-seller-enablement</div>
+</div>
 
+<script>
+(function(){
+  var el=document.getElementById('views');
+  fetch('https://api.counterapi.dev/v1/sf-on-sf-sellers/visits/up')
+    .then(function(r){return r.json()})
+    .then(function(d){el.textContent=d.count.toLocaleString()})
+    .catch(function(){el.textContent='--'});
+})();
+</script>
 </body>
 </html>
