@@ -14,83 +14,161 @@
 <meta name="twitter:card" content="summary_large_image">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Salesforce Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;background:#032D60;color:#fff;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 24px}
+body{font-family:'Salesforce Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;background:#032D60;color:#fff;min-height:100vh;padding:0}
 
-.card{max-width:680px;width:100%;text-align:center}
-
-.eyebrow{font-size:11px;font-weight:700;letter-spacing:2.5px;color:#04E1CB;text-transform:uppercase;margin-bottom:16px}
-h1{font-size:38px;font-weight:800;line-height:1.2;margin-bottom:20px}
-h1 span{color:#04E1CB}
-.sub{font-size:16px;color:#B4D6F0;line-height:1.6;max-width:560px;margin:0 auto 36px}
-
-.stat-row{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-bottom:44px}
-.stat .num{font-size:40px;font-weight:900}
-.stat .label{font-size:11px;color:#B4D6F0;margin-top:4px;text-transform:uppercase;letter-spacing:1px;font-weight:600}
-
-.teaser{text-align:left;margin-bottom:40px}
-.teaser-label{font-size:11px;font-weight:700;letter-spacing:2px;color:#04E1CB;text-transform:uppercase;margin-bottom:14px}
-.teaser-items{display:flex;flex-direction:column;gap:10px}
-.teaser-item{background:rgba(255,255,255,0.04);border:1px solid rgba(27,150,255,0.2);border-radius:10px;padding:16px 22px;font-size:15px;font-weight:600;color:#E8F4FD;transition:all 0.15s}
-.teaser-item:hover{border-color:#04E1CB;background:rgba(4,225,203,0.05)}
-.teaser-item .type{font-size:11px;font-weight:700;color:#1B96FF;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px}
-.more{font-size:13px;color:#B4D6F0;margin-top:14px;font-style:italic}
-
-.cta-section{margin-bottom:36px}
-.cta-section p{font-size:14px;color:#B4D6F0;margin-bottom:20px;line-height:1.6}
-.cta-links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
-.cta-link{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;padding:14px 26px;border-radius:8px;text-decoration:none;transition:all 0.2s;letter-spacing:0.2px}
-.cta-link.primary{background:#0176D3;color:#fff}
-.cta-link.primary:hover{background:#1B96FF;transform:translateY(-1px)}
-.cta-link.secondary{background:transparent;border:1.5px solid rgba(4,225,203,0.5);color:#04E1CB}
-.cta-link.secondary:hover{background:rgba(4,225,203,0.08);border-color:#04E1CB}
-.cta-link.tertiary{background:transparent;border:1.5px solid rgba(27,150,255,0.4);color:#1B96FF}
-.cta-link.tertiary:hover{background:rgba(27,150,255,0.08);border-color:#1B96FF}
-
-.footer{margin-top:40px;font-size:11px;color:#6B8AAD;text-align:center}
-.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:6px 12px;font-size:11px;font-weight:600;color:#B4D6F0;margin-bottom:20px}
+.hero{background:linear-gradient(160deg,#032D60 0%,#0B5CAB 40%,#032D60 100%);padding:56px 40px 48px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-100px;right:-60px;width:450px;height:450px;background:radial-gradient(circle,rgba(27,150,255,0.1) 0%,transparent 65%);border-radius:50%}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:6px;padding:6px 12px;font-size:11px;font-weight:600;color:#B4D6F0;margin-bottom:18px}
 .badge .dot{width:7px;height:7px;background:#04E1CB;border-radius:50%}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:2.5px;color:#04E1CB;text-transform:uppercase;margin-bottom:14px}
+.hero h1{font-size:36px;font-weight:800;line-height:1.2;margin-bottom:18px;max-width:650px;margin-left:auto;margin-right:auto}
+.hero h1 span{color:#04E1CB}
+.hero .sub{font-size:16px;color:#B4D6F0;line-height:1.6;max-width:580px;margin:0 auto 32px}
+.stat-row{display:flex;justify-content:center;gap:44px;flex-wrap:wrap}
+.stat .num{font-size:36px;font-weight:900}
+.stat .label{font-size:10px;color:#B4D6F0;margin-top:3px;text-transform:uppercase;letter-spacing:1px;font-weight:600}
+
+.content{max-width:760px;margin:0 auto;padding:48px 28px 50px}
+
+.section{margin-bottom:48px}
+.section-label{font-size:11px;font-weight:700;letter-spacing:2px;color:#04E1CB;text-transform:uppercase;margin-bottom:10px}
+.section-title{font-size:20px;font-weight:800;margin-bottom:8px}
+.section-sub{font-size:14px;color:#B4D6F0;margin-bottom:22px;line-height:1.5}
+
+.sessions-teaser{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
+.s-item{background:rgba(255,255,255,0.04);border:1px solid rgba(27,150,255,0.2);border-radius:10px;padding:16px 22px;transition:all 0.15s;cursor:default}
+.s-item:hover{border-color:#04E1CB;background:rgba(4,225,203,0.04)}
+.s-item .type{font-size:10px;font-weight:700;color:#1B96FF;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:4px}
+.s-item .name{font-size:15px;font-weight:600;color:#E8F4FD}
+.s-item .why{font-size:12px;color:#B4D6F0;margin-top:5px;line-height:1.4}
+.see-more{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:#1B96FF;text-decoration:none;padding:10px 0;transition:color 0.15s}
+.see-more:hover{color:#04E1CB}
+.see-more .arrow{font-size:16px;transition:transform 0.15s}
+.see-more:hover .arrow{transform:translateX(4px)}
+
+.resources{display:flex;flex-direction:column;gap:12px}
+.res{display:flex;align-items:flex-start;gap:16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:18px 22px;text-decoration:none;transition:all 0.15s}
+.res:hover{border-color:#04E1CB;background:rgba(4,225,203,0.04);transform:translateY(-1px)}
+.res-icon{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;font-weight:700}
+.res-icon.hub{background:linear-gradient(135deg,#0176D3,#1B96FF)}
+.res-icon.ch1{background:linear-gradient(135deg,#04E1CB,#00A88E)}
+.res-icon.ch2{background:linear-gradient(135deg,#7C3AED,#A78BFA)}
+.res-icon.wp1{background:linear-gradient(135deg,#E8772E,#F59E0B)}
+.res-icon.wp2{background:linear-gradient(135deg,#EC4899,#F472B6)}
+.res-icon.lib{background:linear-gradient(135deg,#6B7280,#9CA3AF)}
+.res-body{flex:1}
+.res-title{font-size:14px;font-weight:700;color:#FFFFFF;margin-bottom:3px}
+.res-desc{font-size:12px;color:#B4D6F0;line-height:1.45}
+
+.footer{text-align:center;padding:28px 20px;border-top:1px solid rgba(255,255,255,0.06);font-size:11px;color:#6B8AAD;max-width:760px;margin:0 auto}
 </style>
 </head>
 <body>
 
-<div class="card">
+<div class="hero">
   <div class="badge"><span class="dot"></span>Customer Zero | Dreamforce 2026</div>
   <div class="eyebrow">Salesforce on Salesforce</div>
   <h1>Your Customer Asks:<br><span>"How Does Salesforce Do It?"</span></h1>
-  <div class="sub">75+ activations at Dreamforce — breakouts, live demos, and campground sessions. Real stories from how Salesforce uses its own products. Ready for your customer conversations.</div>
-
+  <div class="sub">75+ activations at Dreamforce. Real stories from how we build, ship, and scale with our own products. Here's everything you need for customer conversations.</div>
   <div class="stat-row">
     <div class="stat"><div class="num">75+</div><div class="label">Activations</div></div>
     <div class="stat"><div class="num">8</div><div class="label">Breakouts</div></div>
     <div class="stat"><div class="num">8</div><div class="label">Live Demos</div></div>
     <div class="stat"><div class="num">21</div><div class="label">Campground</div></div>
   </div>
-
-  <div class="teaser">
-    <div class="teaser-label">A Taste of What's Covered</div>
-    <div class="teaser-items">
-      <div class="teaser-item"><div class="type">Breakout</div>How Salesforce Transforms Sales in the Agentic Enterprise</div>
-      <div class="teaser-item"><div class="type">Breakout</div>How Salesforce Gets More Done Daily with Slack and Slackbot</div>
-      <div class="teaser-item"><div class="type">Demo</div>How Salesforce Drives Customer Service with Agentforce</div>
-    </div>
-    <div class="more">+ dozens more across Sales, Service, Marketing, HR, IT, Data, and MuleSoft</div>
-  </div>
-
-  <div class="cta-section">
-    <p>Everything you need — session details, big bets, and content you can share directly with your customers.</p>
-    <div class="cta-links">
-      <a href="https://salesforce.enterprise.slack.com/docs/T01G0063H29/F0AAG8CSLHX" class="cta-link primary">Full Content Library</a>
-      <a href="https://docs.google.com/presentation/d/1bYN5RsRIUkSWRvZsNUIsISoklSCxs4vayAujzOkSV2w/edit?slide=id.g37016d44d37_0_0#slide=id.g37016d44d37_0_0" class="cta-link secondary">Agentic Enterprise Playbook</a>
-      <a href="https://docs.google.com/presentation/d/1bYN5RsRIUkSWRvZsNUIsISoklSCxs4vayAujzOkSV2w/edit" class="cta-link tertiary">Full Dreamforce Session List</a>
-    </div>
-  </div>
-
-  <div class="footer">Salesforce on Salesforce | Customer Zero | Digital Employee Transformation<br>Questions? Reach us in #customer-zero-seller-enablement</div>
 </div>
+
+<div class="content">
+
+  <!-- SESSIONS TEASER -->
+  <div class="section">
+    <div class="section-label">At Dreamforce</div>
+    <div class="section-title">Sessions You Can Bring Your Customers To</div>
+    <div class="section-sub">Breakouts, live demos, and campground sessions covering how Salesforce actually uses its own products — from Sales to Service to HR.</div>
+    <div class="sessions-teaser">
+      <div class="s-item">
+        <div class="type">Breakout Session</div>
+        <div class="name">How Salesforce Transforms Sales in the Agentic Enterprise</div>
+        <div class="why">Directly relevant to your accounts. Show customers how we're using Agentforce in our own sales motion.</div>
+      </div>
+      <div class="s-item">
+        <div class="type">Live Demo</div>
+        <div class="name">How Salesforce Gets More Done Daily with Slack and Slackbot</div>
+        <div class="why">Customers always ask about productivity. This shows Slack AI and Slackbot in production at scale.</div>
+      </div>
+    </div>
+    <a href="https://docs.google.com/presentation/d/19Qeh5Ynop8QtNTWHVzZCwy44-IkYaoSs26hJcZT9Cxw/edit" class="see-more">See all 75+ sessions, demos, and campground details <span class="arrow">&rarr;</span></a>
+  </div>
+
+  <!-- CONTENT RESOURCES -->
+  <div class="section">
+    <div class="section-label">Your Content Toolkit</div>
+    <div class="section-title">Everything You Need — Ready to Share with Customers</div>
+    <div class="section-sub">Decks, white papers, leave-behinds, and talking points. Use these in customer meetings, SICs, and account conversations.</div>
+    <div class="resources">
+      <a href="https://salesforce.enterprise.slack.com/docs/T01G0063H29/F0AAG8CSLHX" class="res">
+        <div class="res-icon hub">&#9733;</div>
+        <div class="res-body">
+          <div class="res-title">Customer Zero Content Hub</div>
+          <div class="res-desc">Your one-stop canvas — decks, leave-behinds, and talking points sorted by how far along your customer is in their AI journey. Plus quick links to request a speaker for a customer meeting.</div>
+        </div>
+      </a>
+      <a href="https://docs.google.com/presentation/d/1bYN5RsRIUkSWRvZsNUIsISoklSCxs4vayAujzOkSV2w/edit?slide=id.g37016d44d37_0_0#slide=id.g37016d44d37_0_0" class="res">
+        <div class="res-icon ch1">1</div>
+        <div class="res-body">
+          <div class="res-title">Agentic Enterprise Playbook (C0 Story Chapter 1)</div>
+          <div class="res-desc">The core deck for the "Past the Pilot" stage — how Salesforce built its own agentic enterprise, for customers moving from pilot to production.</div>
+        </div>
+      </a>
+      <a href="https://docs.google.com/presentation/d/1xBVM5nI6w1WN9N98Hv8jM9i2_TEQ9bMqOd05rfwiBJI/edit?slide=id.g3d93277cc92_0_1075#slide=id.g3d93277cc92_0_1075" class="res">
+        <div class="res-icon ch2">2</div>
+        <div class="res-body">
+          <div class="res-title">How Salesforce is Scaling the Agentic Enterprise (C0 Story Chapter 2)</div>
+          <div class="res-desc">The follow-on deck for the "Scaling Impact" stage — how we scaled the agentic enterprise across the whole company.</div>
+        </div>
+      </a>
+      <a href="https://www.salesforce.com/news/stories/ai-lessons-building-enterprise-agents/" class="res">
+        <div class="res-icon wp1">W</div>
+        <div class="res-body">
+          <div class="res-title">ADLC White Paper 1</div>
+          <div class="res-desc">Applied AI: Lessons from Building Agents in the Enterprise.</div>
+        </div>
+      </a>
+      <a href="https://www.salesforce.com/news/stories/applied-ai-building-agents-playbook/" class="res">
+        <div class="res-icon wp2">W</div>
+        <div class="res-body">
+          <div class="res-title">ADLC White Paper 2</div>
+          <div class="res-desc">The deep-dive part 2 — the full ADLC framework, first principles, six core phases, and the new roles and capabilities enterprises need to succeed.</div>
+        </div>
+      </a>
+      <a href="https://docs.google.com/spreadsheets/d/1XkNQu0XnZin74PJI03R_WMlIzQ6_6OCLvsvW926Q0dk/edit?gid=37243534#gid=37243534" class="res">
+        <div class="res-icon lib">&#9776;</div>
+        <div class="res-body">
+          <div class="res-title">Customer Zero Content Library</div>
+          <div class="res-desc">Full tracker of all FY26 C0 content assets — pull mature stories and slides instead of building new ones.</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">Salesforce on Salesforce | Customer Zero | Digital Employee Transformation<br>Questions? Reach us in #customer-zero-seller-enablement</div>
 
 <script>
 (function(){
-  fetch('https://api.counterapi.dev/v1/sf-on-sf-sellers/visits/up').catch(function(){});
+  var uid = localStorage.getItem('sf_seller_uid');
+  if (!uid) {
+    uid = 'u_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now();
+    localStorage.setItem('sf_seller_uid', uid);
+  }
+  var visited = sessionStorage.getItem('sf_seller_counted');
+  if (!visited) {
+    sessionStorage.setItem('sf_seller_counted', '1');
+    var log = 'https://docs.google.com/forms/d/e/FORM_ID/formResponse?entry.0=' + encodeURIComponent(uid) + '&entry.1=' + encodeURIComponent(new Date().toISOString()) + '&entry.2=' + encodeURIComponent(document.referrer || 'direct');
+    var img = new Image();
+    img.src = log;
+  }
 })();
 </script>
 </body>
