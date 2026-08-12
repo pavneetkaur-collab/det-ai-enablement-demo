@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salesforce on Salesforce | Dreamforce 2026 - Seller Guide</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Salesforce Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;background:#032D60;color:#fff;min-height:100vh}
+
+.hero{background:linear-gradient(160deg,#032D60 0%,#0B5CAB 50%,#032D60 100%);padding:64px 40px 56px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-120px;right:-60px;width:500px;height:500px;background:radial-gradient(circle,rgba(27,150,255,0.12) 0%,transparent 65%);border-radius:50%}
+.hero::after{content:'';position:absolute;bottom:-100px;left:-60px;width:400px;height:400px;background:radial-gradient(circle,rgba(4,225,203,0.08) 0%,transparent 65%);border-radius:50%}
+.hero .eyebrow{font-size:11px;font-weight:700;letter-spacing:2.5px;color:#04E1CB;text-transform:uppercase;margin-bottom:14px}
+.hero h1{font-size:40px;font-weight:800;line-height:1.15;max-width:720px;margin:0 auto 18px;color:#FFFFFF}
+.hero h1 span{color:#04E1CB}
+.hero .sub{font-size:17px;color:#B4D6F0;max-width:620px;margin:0 auto 36px;line-height:1.55}
+.stat-row{display:flex;justify-content:center;gap:48px;flex-wrap:wrap}
+.stat{text-align:center}
+.stat .num{font-size:38px;font-weight:900;color:#FFFFFF}
+.stat .label{font-size:11px;color:#B4D6F0;margin-top:4px;text-transform:uppercase;letter-spacing:1px;font-weight:600}
+
+.content{max-width:920px;margin:0 auto;padding:48px 28px 60px}
+.section-label{font-size:11px;font-weight:700;letter-spacing:2px;color:#04E1CB;text-transform:uppercase;margin-bottom:8px}
+.section-title{font-size:22px;font-weight:800;margin-bottom:22px;color:#FFFFFF}
+
+.bets-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:10px;margin-bottom:52px}
+.bet{background:rgba(27,150,255,0.08);border:1px solid rgba(27,150,255,0.25);border-radius:8px;padding:14px 16px;text-align:center;font-size:13px;font-weight:700;color:#FFFFFF;transition:all 0.2s}
+.bet:hover{background:rgba(27,150,255,0.15);border-color:#1B96FF;transform:translateY(-1px)}
+
+.sessions{margin-bottom:52px}
+.session-group{margin-bottom:30px}
+.session-group h3{font-size:13px;font-weight:700;color:#1B96FF;margin-bottom:12px;display:flex;align-items:center;gap:8px;text-transform:uppercase;letter-spacing:0.5px}
+.session-group h3 .count{background:#0176D3;color:#fff;font-size:10px;font-weight:700;padding:3px 9px;border-radius:10px;letter-spacing:0.3px}
+.session-list{list-style:none;padding:0}
+.session-list li{padding:13px 18px;border-left:3px solid #0B5CAB;margin-bottom:6px;background:rgba(255,255,255,0.03);border-radius:0 8px 8px 0;font-size:14px;font-weight:500;color:#E8F4FD;transition:all 0.15s}
+.session-list li:hover{border-left-color:#04E1CB;background:rgba(4,225,203,0.06);color:#FFFFFF}
+
+.campground{margin-bottom:52px}
+.campground-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:30px 34px;display:flex;gap:24px;align-items:flex-start}
+.campground-icon{width:52px;height:52px;background:linear-gradient(135deg,#0176D3,#04E1CB);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+.campground-body h3{font-size:16px;font-weight:800;margin-bottom:8px;color:#FFFFFF}
+.campground-body p{font-size:14px;color:#B4D6F0;line-height:1.6}
+.campground-body ul{list-style:none;padding:0;margin-top:14px}
+.campground-body li{font-size:13px;color:#B4D6F0;padding:5px 0 5px 18px;position:relative}
+.campground-body li::before{content:'';position:absolute;left:0;top:12px;width:6px;height:6px;background:#04E1CB;border-radius:50%}
+
+.cta-section{background:linear-gradient(135deg,rgba(4,225,203,0.06) 0%,rgba(1,118,211,0.06) 100%);border:1px solid rgba(4,225,203,0.2);border-radius:14px;padding:44px 40px;text-align:center;margin-bottom:52px}
+.cta-section h2{font-size:20px;font-weight:800;margin-bottom:10px;color:#FFFFFF}
+.cta-section p{font-size:14px;color:#B4D6F0;max-width:520px;margin:0 auto 28px;line-height:1.6}
+.cta-links{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.cta-link{display:inline-flex;align-items:center;gap:8px;background:#0176D3;color:#fff;font-size:13px;font-weight:700;padding:13px 24px;border-radius:8px;text-decoration:none;transition:all 0.2s;letter-spacing:0.2px}
+.cta-link:hover{background:#1B96FF;transform:translateY(-1px)}
+.cta-link.secondary{background:transparent;border:1.5px solid rgba(4,225,203,0.5);color:#04E1CB}
+.cta-link.secondary:hover{background:rgba(4,225,203,0.08);border-color:#04E1CB}
+
+.footer{text-align:center;padding:32px 20px;border-top:1px solid rgba(255,255,255,0.06);font-size:12px;color:#6B8AAD;line-height:1.6}
+
+.sf-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:6px;padding:6px 12px;font-size:11px;font-weight:600;color:#B4D6F0;margin-top:20px}
+.sf-badge .dot{width:8px;height:8px;background:#04E1CB;border-radius:50%}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="eyebrow">Salesforce on Salesforce | Dreamforce 2026 | September 15-18</div>
+  <h1>Your Customer Asks:<br><span>"How Does Salesforce Do It?"</span></h1>
+  <div class="sub">Here's everything you need. 75+ Salesforce on Salesforce activations across breakouts, demos, and campground sessions. Real stories, real methodology — ready for your customer conversations.</div>
+  <div class="stat-row">
+    <div class="stat"><div class="num">75+</div><div class="label">Total Activations</div></div>
+    <div class="stat"><div class="num">8</div><div class="label">Breakout Sessions</div></div>
+    <div class="stat"><div class="num">21</div><div class="label">Campground Sessions</div></div>
+    <div class="stat"><div class="num">8</div><div class="label">Live Demos</div></div>
+  </div>
+  <div class="sf-badge"><span class="dot"></span>Customer Zero | Digital Employee Transformation</div>
+</div>
+
+<div class="content">
+
+  <div class="section-label">Big Bets Represented</div>
+  <div class="section-title">What We're Showing the World</div>
+  <div class="bets-grid">
+    <div class="bet">Agentic Enterprise</div>
+    <div class="bet">Agentic Dev Lifecycle</div>
+    <div class="bet">Agentic Measurement</div>
+    <div class="bet">Experimentation</div>
+    <div class="bet">Rapid Innovation Squads</div>
+    <div class="bet">Workforce Transformation</div>
+    <div class="bet">Governance</div>
+  </div>
+
+  <div class="sessions">
+    <div class="section-label">Sessions Your Customers Will Care About</div>
+    <div class="section-title">Point Them Here</div>
+
+    <div class="session-group">
+      <h3>Breakout Sessions <span class="count">8 unique + 3 repeats</span></h3>
+      <ul class="session-list">
+        <li>How Salesforce Makes Everyone a Builder with Headless 360</li>
+        <li>How Salesforce Builds Smarter Agents with Data 360</li>
+        <li>How Salesforce Drives Customer Service with Agentforce</li>
+        <li>How Salesforce Reinvents the Architecture of Work</li>
+        <li>How Salesforce Transforms Sales in the Agentic Enterprise</li>
+        <li>How Salesforce Gets More Done Daily with Slack and Slackbot</li>
+        <li>How Salesforce is Transforming Marketing in the Agentic Era</li>
+        <li>How Salesforce is Transforming HR with Agents</li>
+      </ul>
+    </div>
+
+    <div class="session-group">
+      <h3>General Theater Sessions <span class="count">8 unique + 8 repeats</span></h3>
+      <ul class="session-list">
+        <li>How Salesforce Built Secure IT Agents with Headless 360</li>
+        <li>How Salesforce Elevates Event Experiences with Agentforce</li>
+        <li>How Salesforce Powers its Lead Funnel with Data 360</li>
+        <li>How Salesforce Scales its Agentic Engine with Data 360</li>
+        <li>How Salesforce Uses Informatica Data Quality for Agentic AI</li>
+        <li>How Salesforce Built an Agentic Monitoring System in Slack</li>
+        <li>How Salesforce Boosts Onboarding with Agentforce and MuleSoft</li>
+        <li>How Salesforce Builds Trusted AI Agent Tools with MuleSoft</li>
+      </ul>
+    </div>
+
+    <div class="session-group">
+      <h3>SF on SF Campground <span class="count">21 unique + 21 repeats</span></h3>
+      <ul class="session-list">
+        <li>How Salesforce Implements the Agentic Development Life Cycle</li>
+        <li>How Salesforce Pilots the Future of Agentic Work</li>
+        <li>How Salesforce's Rapid Innovation Squads Ship AI 70% Faster</li>
+        <li>How Salesforce Builds Flexible, Scalable AI Architecture</li>
+        <li>How Salesforce Designs Great Agentic Conversations</li>
+        <li>How Salesforce Measures Business Value of Agentforce on Help</li>
+        <li>How Salesforce Delivers Self-Service Support</li>
+        <li>How Salesforce Scales with Agentforce Center of Excellence</li>
+        <li>How Salesforce Powers Renewals with Agents</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="campground">
+    <div class="section-label">At Dreamforce</div>
+    <div class="section-title">Where to Go</div>
+    <div class="campground-card">
+      <div class="campground-icon">&#9889;</div>
+      <div class="campground-body">
+        <h3>SF on SF Campground + Drop-In Desk</h3>
+        <p>Bring your customers. Walk them through how Salesforce actually uses its own products — live demos, real Slack workflows, and practitioners who can answer anything.</p>
+        <ul>
+          <li>Live demos of Agentforce, Slack, Claude Code, Data 360 in production</li>
+          <li>Practitioners available for hands-on Q&A</li>
+          <li>Take-home resources: QR codes to content library, playbooks, canvas guides</li>
+          <li>SF on SF Campfire sessions running all 3 days</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <h2>Get the Full Content Library</h2>
+    <p>Everything you need to answer "How does Salesforce do it?" — white papers, the ADLC playbook, Customer Zero canvas, and more.</p>
+    <div class="cta-links">
+      <a href="https://salesforce.enterprise.slack.com/docs/T01G0063H29/F0AAG8CSLHX" class="cta-link">SF on SF Canvas</a>
+      <a href="https://salesforce.enterprise.slack.com/docs/T01G0063H29/F0AAG8CSLHX" class="cta-link secondary">Agentic Enterprise Playbook (C0 Story Ch. 1)</a>
+    </div>
+  </div>
+
+  <div class="section-label">Customer Zero Stories by Product</div>
+  <div class="section-title">Match Your Customer's Stack</div>
+  <div class="bets-grid" style="grid-template-columns:repeat(auto-fit,minmax(125px,1fr))">
+    <div class="bet">MuleSoft</div>
+    <div class="bet">Data 360</div>
+    <div class="bet">Headless</div>
+    <div class="bet">Tableau</div>
+    <div class="bet">Slack</div>
+    <div class="bet">Sales</div>
+    <div class="bet">Marketing</div>
+    <div class="bet">ES (HR)</div>
+    <div class="bet">Service</div>
+    <div class="bet">Informatica</div>
+    <div class="bet">Qualified</div>
+    <div class="bet">Voice</div>
+    <div class="bet">IT</div>
+    <div class="bet">Impact</div>
+    <div class="bet">Regrello (AgOps)</div>
+  </div>
+
+</div>
+
+<div class="footer">Salesforce on Salesforce | Customer Zero | Digital Employee Transformation<br>Questions? Reach us in #customer-zero-seller-enablement</div>
+
+</body>
+</html>
