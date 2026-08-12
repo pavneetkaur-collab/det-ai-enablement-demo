@@ -155,21 +155,5 @@ body{font-family:'Salesforce Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',A
 
 <div class="footer">Salesforce on Salesforce | Customer Zero | Digital Employee Transformation<br>Questions? Reach us in #customer-zero-seller-enablement</div>
 
-<script>
-(function(){
-  var uid = localStorage.getItem('sf_seller_uid');
-  if (!uid) {
-    uid = 'u_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now();
-    localStorage.setItem('sf_seller_uid', uid);
-  }
-  var visited = sessionStorage.getItem('sf_seller_counted');
-  if (!visited) {
-    sessionStorage.setItem('sf_seller_counted', '1');
-    var url = 'https://docs.google.com/forms/d/e/1FAIpQLSeZMs8XCJELw_qUw3zjszhq4Yqm3wjDOL8KwoEeO8YztjmVgw/formResponse?entry.1260831470=' + encodeURIComponent(uid);
-    var img = new Image();
-    img.src = url;
-  }
-})();
-</script>
 </body>
 </html>
