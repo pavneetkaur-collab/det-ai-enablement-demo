@@ -14,54 +14,61 @@
 <meta name="twitter:card" content="summary_large_image">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Salesforce Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;background:#FFFFFF;color:#032D60;min-height:100vh;padding:0}
+body{font-family:'Salesforce Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;background:#FFFFFF;color:#032D60;min-height:100vh;padding:0;font-size:16px;line-height:1.6}
 
 .accent-bar{height:5px;background:linear-gradient(90deg,#0176D3,#04E1CB,#E8772E,#7C3AED)}
 
-.hero{padding:40px 48px 32px;border-bottom:1px solid #E2E8F0}
-.badge{display:inline-block;background:#E8F4FD;color:#0176D3;font-size:11px;font-weight:700;letter-spacing:1.5px;padding:5px 12px;border-radius:14px;text-transform:uppercase;margin-bottom:14px}
-.hero h1{font-size:32px;font-weight:900;line-height:1.25;color:#032D60;margin-bottom:6px}
+.hero{padding:48px 48px 40px;border-bottom:1px solid #E2E8F0}
+.badge{display:inline-block;background:#E8F4FD;color:#0176D3;font-size:12px;font-weight:700;letter-spacing:1.5px;padding:6px 14px;border-radius:14px;text-transform:uppercase;margin-bottom:16px}
+.hero h1{font-size:36px;font-weight:900;line-height:1.25;color:#032D60;margin-bottom:8px}
 .hero h1 span{color:#0176D3}
-.hero .sub{font-size:15px;color:#616061;line-height:1.55;max-width:620px;margin-top:10px}
+.hero .sub{font-size:18px;color:#616061;line-height:1.6;max-width:640px;margin-top:12px}
 
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:32px;padding:36px 48px 48px}
-@media(max-width:800px){.two-col{grid-template-columns:1fr;gap:40px}}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:44px 48px 56px}
 
 .col{display:flex;flex-direction:column}
-.section-label{font-size:20px;font-weight:900;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:4px}
+.section-label{font-size:22px;font-weight:900;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:6px}
 .section-label.blue{color:#0176D3}
 .section-label.teal{color:#00A88E}
-.section-title{font-size:13px;font-weight:600;color:#616061;margin-bottom:14px}
+.section-title{font-size:15px;font-weight:600;color:#616061;margin-bottom:16px}
 
-.resources{display:flex;flex-direction:column;gap:8px}
-.res{display:flex;align-items:flex-start;gap:12px;border:1px solid #E2E8F0;border-radius:8px;padding:14px 16px;text-decoration:none;transition:all 0.15s;background:#FFFFFF}
+.resources{display:flex;flex-direction:column;gap:10px}
+.res{display:flex;align-items:flex-start;gap:14px;border:1px solid #E2E8F0;border-radius:10px;padding:18px 20px;text-decoration:none;transition:all 0.15s;background:#FFFFFF}
 .res:hover{box-shadow:0 4px 16px rgba(0,0,0,0.06);border-color:#0176D3;transform:translateY(-1px)}
-.res-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;color:#fff;font-weight:800}
-.res-icon.ch1{background:#00A88E}
-.res-icon.ch2{background:#7C3AED}
-.res-icon.wp1{background:#E8772E}
-.res-icon.wp2{background:#EC4899}
 .res-body{flex:1}
-.res-title{font-size:13px;font-weight:700;color:#032D60;margin-bottom:2px}
-.res-desc{font-size:11px;color:#616061;line-height:1.4}
+.res-title{font-size:16px;font-weight:700;color:#032D60;margin-bottom:4px}
+.res-desc{font-size:14px;color:#616061;line-height:1.5}
 
-.session-category{border:1px solid #E2E8F0;border-radius:8px;padding:16px 18px;border-left:4px solid;background:#FFFFFF;margin-bottom:10px}
+.session-category{border:1px solid #E2E8F0;border-radius:10px;padding:20px 22px;border-left:4px solid;background:#FFFFFF;margin-bottom:12px}
 .session-category:nth-child(1){border-left-color:#0176D3}
 .session-category:nth-child(2){border-left-color:#E8772E}
 .session-category:nth-child(3){border-left-color:#7C3AED}
-.session-category .cat-header{display:flex;align-items:baseline;gap:8px;margin-bottom:6px}
-.session-category .cat-count{font-size:22px;font-weight:900;color:#032D60}
-.session-category .cat-label{font-size:11px;font-weight:700;color:#616061;text-transform:uppercase;letter-spacing:0.5px}
-.session-category .example{font-size:12px;color:#032D60;line-height:1.45;padding:2px 0}
-.session-category .more-link{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:700;color:#0176D3;text-decoration:none;margin-top:6px}
+.session-category .cat-header{display:flex;align-items:baseline;gap:10px;margin-bottom:8px}
+.session-category .cat-count{font-size:26px;font-weight:900;color:#032D60}
+.session-category .cat-label{font-size:13px;font-weight:700;color:#616061;text-transform:uppercase;letter-spacing:0.5px}
+.session-category .example{font-size:14px;color:#032D60;line-height:1.5;padding:3px 0}
+.session-category .more-link{display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:700;color:#0176D3;text-decoration:none;margin-top:8px}
 .session-category .more-link:hover{text-decoration:underline}
 
-.see-more{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:#fff;background:#0176D3;text-decoration:none;padding:10px 18px;border-radius:8px;margin-top:12px;transition:all 0.15s}
+.see-more{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:700;color:#fff;background:#0176D3;text-decoration:none;padding:12px 22px;border-radius:8px;margin-top:16px;transition:all 0.15s}
 .see-more:hover{background:#0B5CAB;transform:translateY(-1px);box-shadow:0 4px 12px rgba(1,118,211,0.3)}
-.see-more .arrow{font-size:16px;transition:transform 0.15s}
+.see-more .arrow{font-size:18px;transition:transform 0.15s}
 .see-more:hover .arrow{transform:translateX(4px)}
 
-.footer{text-align:center;padding:24px 20px;border-top:1px solid #E2E8F0;font-size:12px;color:#616061}
+.footer{text-align:center;padding:28px 20px;border-top:1px solid #E2E8F0;font-size:14px;color:#616061}
+
+@media(max-width:800px){
+  .two-col{grid-template-columns:1fr;gap:40px;padding:32px 20px 40px}
+  .hero{padding:32px 20px 28px}
+  .hero h1{font-size:28px}
+  .hero .sub{font-size:16px}
+  .section-label{font-size:20px}
+  .res{padding:16px}
+  .res-title{font-size:15px}
+  .res-desc{font-size:13px}
+  .session-category{padding:16px 18px}
+  .session-category .example{font-size:13px}
+}
 </style>
 </head>
 <body>
@@ -81,35 +88,30 @@ body{font-family:'Salesforce Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',A
     <div class="section-title">Ready for Customer Conversations Right Now</div>
     <div class="resources">
       <a href="https://docs.google.com/presentation/d/1bYN5RsRIUkSWRvZsNUIsISoklSCxs4vayAujzOkSV2w/edit?slide=id.g37016d44d37_0_0#slide=id.g37016d44d37_0_0" class="res" target="_blank">
-        <div class="res-icon ch1">1</div>
         <div class="res-body">
           <div class="res-title">Agentic Enterprise Playbook (Chapter 1)</div>
           <div class="res-desc">How Salesforce built its own agentic enterprise — for customers moving from pilot to production.</div>
         </div>
       </a>
       <a href="https://docs.google.com/presentation/d/1xBVM5nI6w1WN9N98Hv8jM9i2_TEQ9bMqOd05rfwiBJI/edit?slide=id.g3d93277cc92_0_1075#slide=id.g3d93277cc92_0_1075" class="res" target="_blank">
-        <div class="res-icon ch2">2</div>
         <div class="res-body">
           <div class="res-title">Scaling the Agentic Enterprise (Chapter 2)</div>
           <div class="res-desc">How we scaled agents across the whole company.</div>
         </div>
       </a>
       <a href="https://www.salesforce.com/news/stories/ai-lessons-building-enterprise-agents/" class="res" target="_blank">
-        <div class="res-icon wp1">W</div>
         <div class="res-body">
           <div class="res-title">ADLC: Lessons</div>
           <div class="res-desc">Applied AI lessons from building agents in the enterprise.</div>
         </div>
       </a>
       <a href="https://www.salesforce.com/news/stories/applied-ai-building-agents-playbook/" class="res" target="_blank">
-        <div class="res-icon wp2">W</div>
         <div class="res-body">
           <div class="res-title">ADLC: Full Framework</div>
           <div class="res-desc">First principles, 6 core phases, and new roles enterprises need.</div>
         </div>
       </a>
       <a href="https://www.salesforce.com/blog/playbook/agentic-ai/" class="res" target="_blank">
-        <div class="res-icon ch1">&#9654;</div>
         <div class="res-body">
           <div class="res-title">Playbook: Become an Agentic Enterprise</div>
           <div class="res-desc">Guide customers from AI curiosity to full agentic enterprise.</div>
@@ -128,7 +130,7 @@ body{font-family:'Salesforce Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',A
       </div>
       <div class="example">&#8226; How Salesforce Transforms Sales in the Agentic Enterprise</div>
       <div class="example">&#8226; How Salesforce Drives Customer Service with Agentforce</div>
-      <a href="https://docs.google.com/presentation/d/19Qeh5Ynop8QtNTWHVzZCwy44-IkYaoSs26hJcZT9Cxw/edit?slide=id.g3f2596eaf21_0_1462#slide=id.g3f2596eaf21_0_1462" class="more-link" target="_blank">See all 8 breakouts &rarr;</a>
+      <a href="https://docs.google.com/presentation/d/19Qeh5Ynop8QtNTWHVzZCwy44-IkYaoSs26hJcZT9Cxw/edit?slide=id.g3ef5083a537_0_4#slide=id.g3ef5083a537_0_4" class="more-link" target="_blank">See all 8 breakouts &rarr;</a>
     </div>
     <div class="session-category">
       <div class="cat-header">
@@ -137,7 +139,7 @@ body{font-family:'Salesforce Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',A
       </div>
       <div class="example">&#8226; Data 360</div>
       <div class="example">&#8226; MuleSoft (Agent Fabric)</div>
-      <a href="https://docs.google.com/presentation/d/19Qeh5Ynop8QtNTWHVzZCwy44-IkYaoSs26hJcZT9Cxw/edit?slide=id.g3f2596eaf21_0_1462#slide=id.g3f2596eaf21_0_1462" class="more-link" target="_blank">See all 8 demos &rarr;</a>
+      <a href="https://docs.google.com/presentation/d/19Qeh5Ynop8QtNTWHVzZCwy44-IkYaoSs26hJcZT9Cxw/edit?slide=id.g3ef5083a537_0_4#slide=id.g3ef5083a537_0_4" class="more-link" target="_blank">See all 8 demos &rarr;</a>
     </div>
     <div class="session-category">
       <div class="cat-header">
@@ -146,9 +148,9 @@ body{font-family:'Salesforce Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',A
       </div>
       <div class="example">&#8226; How Salesforce Measures Business Value of Agentforce on Help</div>
       <div class="example">&#8226; How Salesforce Powers Renewals with Agents</div>
-      <a href="https://docs.google.com/presentation/d/19Qeh5Ynop8QtNTWHVzZCwy44-IkYaoSs26hJcZT9Cxw/edit?slide=id.g3f2596eaf21_0_1462#slide=id.g3f2596eaf21_0_1462" class="more-link" target="_blank">See all 21 campground sessions &rarr;</a>
+      <a href="https://docs.google.com/presentation/d/19Qeh5Ynop8QtNTWHVzZCwy44-IkYaoSs26hJcZT9Cxw/edit?slide=id.g3ef5083a537_0_4#slide=id.g3ef5083a537_0_4" class="more-link" target="_blank">See all 21 campground sessions &rarr;</a>
     </div>
-    <a href="https://reg.salesforce.com/flow/plus/df26/sessioncatalog/page/catalog?search.topic=1684280550105011B7po" class="see-more" target="_blank">Explore the Dreamforce Agenda Catalog <span class="arrow">&rarr;</span></a>
+    <a href="https://reg.salesforce.com/flow/plus/df26/sessioncatalog/page/catalog?search.topic=1684280550105011B7po" class="see-more" target="_blank">Browse All SF-on-SF Sessions at Dreamforce <span class="arrow">&rarr;</span></a>
   </div>
 
 </div>
