@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teaser - Screenshot at 800x420</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:800px;height:420px;overflow:hidden;font-family:'Salesforce Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;background:#FFFFFF;color:#032D60;display:flex;flex-direction:column}
+
+.accent-bar{height:5px;background:linear-gradient(90deg,#0176D3,#04E1CB,#E8772E,#7C3AED);flex-shrink:0}
+
+.top{flex:1;padding:20px 36px 16px;display:flex;flex-direction:column;justify-content:center}
+
+.badge{display:inline-block;background:#0176D3;color:#fff;font-size:10px;font-weight:700;letter-spacing:1.2px;padding:5px 12px;border-radius:4px;text-transform:uppercase;margin-bottom:12px;width:fit-content}
+
+h1{font-size:30px;font-weight:900;line-height:1.2;color:#032D60;margin-bottom:6px}
+
+.sub{font-size:14px;color:#444;line-height:1.5;margin-bottom:16px;font-weight:700}
+.sub strong{color:#032D60}
+
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:8px}
+.stat-card{background:#F7FAFC;border:1px solid #E2E8F0;border-radius:6px;padding:12px 14px;position:relative;overflow:hidden}
+.stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.stat-card:nth-child(1)::before{background:#0176D3}
+.stat-card:nth-child(2)::before{background:#04E1CB}
+.stat-card:nth-child(3)::before{background:#E8772E}
+.stat-card:nth-child(4)::before{background:#7C3AED}
+.stat-card .num{font-size:28px;font-weight:900;color:#032D60;line-height:1}
+.stat-card .label{font-size:9px;font-weight:700;color:#616061;text-transform:uppercase;letter-spacing:0.8px;margin-top:3px}
+
+.at-dreamforce{font-size:12px;color:#616061;margin-top:6px;text-align:right;padding-right:4px}
+
+.bottom{background:#032D60;padding:18px 36px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+
+.content-cats{font-size:14px;font-weight:700;color:#04E1CB;margin-bottom:14px;text-align:center;letter-spacing:0.3px}
+.content-cats span{margin:0 6px}
+
+.cta{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;font-size:14px;font-weight:800;color:#fff;background:linear-gradient(90deg,#0176D3,#7C3AED);padding:14px 24px;border-radius:30px;text-transform:uppercase;letter-spacing:1px;text-align:center}
+</style>
+</head>
+<body>
+
+<div class="accent-bar"></div>
+
+<div class="top">
+  <div class="badge">Salesforce on Salesforce</div>
+  <h1>"How Does Salesforce Do It?"</h1>
+  <div class="sub">Check SF-On-SF at Dreamforce.</div>
+  <div class="stat-row">
+    <div class="stat-card"><div class="num">75+</div><div class="label">Activations</div></div>
+    <div class="stat-card"><div class="num">8</div><div class="label">Breakouts</div></div>
+    <div class="stat-card"><div class="num">8</div><div class="label">Demos</div></div>
+    <div class="stat-card"><div class="num">21</div><div class="label">Campground</div></div>
+  </div>
+</div>
+
+<div class="bottom">
+  <div class="content-cats">Playbooks <span>&middot;</span> Leave-Behinds <span>&middot;</span> White Papers <span>&middot;</span> Session Guide</div>
+  <div class="cta">&#9654; &nbsp;Click Here to Open Seller Guide</div>
+</div>
+
+</body>
+</html>
