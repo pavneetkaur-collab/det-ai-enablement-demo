@@ -79,6 +79,10 @@ textarea{min-height:120px;resize:vertical}
 document.getElementById('feedback-form').addEventListener('submit', async function(e) {
   e.preventDefault();
   const form = e.target;
+  const btn = form.querySelector('.btn');
+  btn.textContent = 'Submitting...';
+  btn.disabled = true;
+
   const data = {
     name: form.name.value,
     role: form.role.value,
@@ -87,48 +91,19 @@ document.getElementById('feedback-form').addEventListener('submit', async functi
     urgency: form.urgency.value
   };
 
-  // Post to Slack webhook
-  const webhookUrl = window.SLACK_WEBHOOK_URL;
-  if (webhookUrl) {
-    try {
-      const payload = {
-        text: ":mega: *New Seller Feedback*",
-        blocks: [
-          {
-            type: "header",
-            text: { type: "plain_text", text: "New Seller Feedback" }
-          },
-          {
-            type: "section",
-            fields: [
-              { type: "mrkdwn", text: "*From:*\n" + data.name },
-              { type: "mrkdwn", text: "*Role:*\n" + data.role },
-              { type: "mrkdwn", text: "*Type:*\n" + data.feedback_type },
-              { type: "mrkdwn", text: "*Urgency:*\n" + data.urgency }
-            ]
-          },
-          {
-            type: "section",
-            text: { type: "mrkdwn", text: "*Details:*\n" + data.details }
-          }
-        ]
-      };
-      await fetch(webhookUrl, {
-        method: 'POST',
-        body: JSON.stringify(payload)
-      });
-      document.getElementById('form-container').style.display = 'none';
-      document.getElementById('success').style.display = 'block';
-    } catch(err) {
-      document.getElementById('error-msg').style.display = 'block';
-    }
-  } else {
-    // Fallback: copy to clipboard as formatted text
-    const msg = `Seller Feedback\nFrom: ${data.name} (${data.role})\nType: ${data.feedback_type}\nUrgency: ${data.urgency}\nDetails: ${data.details}`;
-    await navigator.clipboard.writeText(msg);
+  try {
+    await fetch('https://script.google.com/a/macros/salesforce.com/s/AKfycbyYNNuqB8sP6fgcXSjTO4zazBgYthTy7g33nvKR2o73CITaGRkaxMYu6gjKMhtcBgSgag/exec', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(data)
+    });
     document.getElementById('form-container').style.display = 'none';
     document.getElementById('success').style.display = 'block';
-    document.querySelector('#success p').textContent = 'Feedback copied to clipboard. Please paste it in #customer-zero-seller-enablement.';
+  } catch(err) {
+    document.getElementById('error-msg').style.display = 'block';
+    btn.textContent = 'Submit Feedback';
+    btn.disabled = false;
   }
 });
 </script>
