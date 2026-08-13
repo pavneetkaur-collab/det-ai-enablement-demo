@@ -75,35 +75,22 @@ textarea{min-height:120px;resize:vertical}
   <p>Your input has been sent to the Customer Zero team. We'll review it and follow up if needed.</p>
 </div>
 
+<iframe name="hidden-iframe" id="hidden-iframe" style="display:none"></iframe>
+
 <script>
-document.getElementById('feedback-form').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  const form = e.target;
-  const btn = form.querySelector('.btn');
+var form = document.getElementById('feedback-form');
+form.action = 'https://script.google.com/a/macros/salesforce.com/s/AKfycbyYNNuqB8sP6fgcXSjTO4zazBgYthTy7g33nvKR2o73CITaGRkaxMYu6gjKMhtcBgSgag/exec';
+form.method = 'POST';
+form.target = 'hidden-iframe';
+
+form.addEventListener('submit', function() {
+  var btn = form.querySelector('.btn');
   btn.textContent = 'Submitting...';
   btn.disabled = true;
-
-  const data = {
-    name: form.name.value,
-    role: form.role.value,
-    feedback_type: form.feedback_type.value,
-    details: form.details.value,
-    urgency: form.urgency.value
-  };
-
-  try {
-    const params = new URLSearchParams(data).toString();
-    await fetch('https://script.google.com/a/macros/salesforce.com/s/AKfycbyYNNuqB8sP6fgcXSjTO4zazBgYthTy7g33nvKR2o73CITaGRkaxMYu6gjKMhtcBgSgag/exec?' + params, {
-      method: 'GET',
-      mode: 'no-cors'
-    });
+  setTimeout(function() {
     document.getElementById('form-container').style.display = 'none';
     document.getElementById('success').style.display = 'block';
-  } catch(err) {
-    document.getElementById('error-msg').style.display = 'block';
-    btn.textContent = 'Submit Feedback';
-    btn.disabled = false;
-  }
+  }, 2000);
 });
 </script>
 
