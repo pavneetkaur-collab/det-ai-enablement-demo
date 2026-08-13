@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salesforce on Salesforce | Seller Feedback</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Salesforce Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;background:#FFFFFF;color:#032D60;min-height:100vh;padding:0}
+.accent-bar{height:5px;background:linear-gradient(90deg,#0176D3,#04E1CB,#E8772E,#7C3AED)}
+.container{max-width:600px;margin:0 auto;padding:40px 24px}
+h1{font-size:24px;font-weight:900;margin-bottom:8px}
+.sub{font-size:14px;color:#616061;margin-bottom:32px;line-height:1.5}
+label{display:block;font-size:13px;font-weight:700;color:#032D60;margin-bottom:6px;margin-top:20px}
+select,textarea,input[type="text"],input[type="email"]{width:100%;padding:12px 14px;border:1px solid #E2E8F0;border-radius:8px;font-size:14px;font-family:inherit;color:#032D60;transition:border-color 0.15s}
+select:focus,textarea:focus,input:focus{outline:none;border-color:#0176D3;box-shadow:0 0 0 3px rgba(1,118,211,0.1)}
+textarea{min-height:120px;resize:vertical}
+.btn{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:700;color:#fff;background:#0176D3;border:none;padding:14px 28px;border-radius:8px;margin-top:28px;cursor:pointer;transition:all 0.15s}
+.btn:hover{background:#0B5CAB;transform:translateY(-1px);box-shadow:0 4px 12px rgba(1,118,211,0.3)}
+.success{display:none;text-align:center;padding:60px 20px}
+.success h2{font-size:22px;font-weight:900;color:#032D60;margin-bottom:8px}
+.success p{font-size:14px;color:#616061}
+.error-msg{display:none;color:#E8772E;font-size:13px;margin-top:8px}
+</style>
+</head>
+<body>
+
+<div class="accent-bar"></div>
+
+<div class="container" id="form-container">
+  <h1>Seller Feedback</h1>
+  <div class="sub">Help us make the Salesforce on Salesforce content more useful for your customer conversations. Your feedback goes directly to the Customer Zero team.</div>
+
+  <form id="feedback-form">
+    <label for="name">Your Name</label>
+    <input type="text" id="name" name="name" required placeholder="First Last">
+
+    <label for="role">Your Role</label>
+    <select id="role" name="role">
+      <option value="">Select...</option>
+      <option value="AE">Account Executive</option>
+      <option value="SE">Solution Engineer</option>
+      <option value="CSM">Customer Success Manager</option>
+      <option value="RVP">RVP / Sales Leader</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <label for="feedback-type">What kind of feedback?</label>
+    <select id="feedback-type" name="feedback_type">
+      <option value="">Select...</option>
+      <option value="content-request">I need content on a topic not covered</option>
+      <option value="session-suggestion">Session or demo suggestion for Dreamforce</option>
+      <option value="improvement">Improvement to existing content</option>
+      <option value="customer-story">I have a customer story to share</option>
+      <option value="other">Other</option>
+    </select>
+
+    <label for="details">Tell us more</label>
+    <textarea id="details" name="details" required placeholder="What would help you in customer conversations? What are customers asking that we're not covering?"></textarea>
+
+    <label for="urgency">How urgent is this?</label>
+    <select id="urgency" name="urgency">
+      <option value="before-df">Need it before Dreamforce</option>
+      <option value="at-df">Would be great to have at Dreamforce</option>
+      <option value="ongoing">Ongoing / no rush</option>
+    </select>
+
+    <div class="error-msg" id="error-msg">Something went wrong. Please try posting in #customer-zero-seller-enablement instead.</div>
+    <button type="submit" class="btn">Submit Feedback</button>
+  </form>
+</div>
+
+<div class="success" id="success">
+  <h2>Thanks for your feedback!</h2>
+  <p>Your input has been sent to the Customer Zero team. We'll review it and follow up if needed.</p>
+</div>
+
+<script>
+document.getElementById('feedback-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = {
+    name: form.name.value,
+    role: form.role.value,
+    feedback_type: form.feedback_type.value,
+    details: form.details.value,
+    urgency: form.urgency.value
+  };
+
+  // Post to Slack webhook
+  const webhookUrl = window.SLACK_WEBHOOK_URL;
+  if (webhookUrl) {
+    try {
+      const payload = {
+        text: ":mega: *New Seller Feedback*",
+        blocks: [
+          {
+            type: "header",
+            text: { type: "plain_text", text: "New Seller Feedback" }
+          },
+          {
+            type: "section",
+            fields: [
+              { type: "mrkdwn", text: "*From:*\n" + data.name },
+              { type: "mrkdwn", text: "*Role:*\n" + data.role },
+              { type: "mrkdwn", text: "*Type:*\n" + data.feedback_type },
+              { type: "mrkdwn", text: "*Urgency:*\n" + data.urgency }
+            ]
+          },
+          {
+            type: "section",
+            text: { type: "mrkdwn", text: "*Details:*\n" + data.details }
+          }
+        ]
+      };
+      await fetch(webhookUrl, {
+        method: 'POST',
+        body: JSON.stringify(payload)
+      });
+      document.getElementById('form-container').style.display = 'none';
+      document.getElementById('success').style.display = 'block';
+    } catch(err) {
+      document.getElementById('error-msg').style.display = 'block';
+    }
+  } else {
+    // Fallback: copy to clipboard as formatted text
+    const msg = `Seller Feedback\nFrom: ${data.name} (${data.role})\nType: ${data.feedback_type}\nUrgency: ${data.urgency}\nDetails: ${data.details}`;
+    await navigator.clipboard.writeText(msg);
+    document.getElementById('form-container').style.display = 'none';
+    document.getElementById('success').style.display = 'block';
+    document.querySelector('#success p').textContent = 'Feedback copied to clipboard. Please paste it in #customer-zero-seller-enablement.';
+  }
+});
+</script>
+
+</body>
+</html>
