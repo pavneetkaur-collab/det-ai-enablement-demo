@@ -76,23 +76,12 @@ document.getElementById('feedback-form').addEventListener('submit', function(e) 
   btn.textContent = 'Submitting...';
   btn.disabled = true;
 
-  var data = {
-    name: form.name.value,
-    role: form.role.value,
-    feedback_type: form.feedback_type.value,
-    details: form.details.value,
-    urgency: form.urgency.value
-  };
-
-  var params = new URLSearchParams(data).toString();
+  var params = 'name=' + encodeURIComponent(form.name.value) + '&role=' + encodeURIComponent(form.role.value) + '&feedback_type=' + encodeURIComponent(form.feedback_type.value) + '&details=' + encodeURIComponent(form.details.value);
   var url = 'https://script.google.com/a/macros/salesforce.com/s/AKfycbyYNNuqB8sP6fgcXSjTO4zazBgYthTy7g33nvKR2o73CITaGRkaxMYu6gjKMhtcBgSgag/exec?' + params;
 
-  var img = new Image();
-  img.src = url;
-  setTimeout(function() {
-    document.getElementById('form-container').style.display = 'none';
-    document.getElementById('success').style.display = 'block';
-  }, 1500);
+  new Image().src = url;
+  document.getElementById('form-container').style.display = 'none';
+  document.getElementById('success').style.display = 'block';
 });
 </script>
 
