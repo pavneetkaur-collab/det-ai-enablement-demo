@@ -87,17 +87,12 @@ document.getElementById('feedback-form').addEventListener('submit', function(e) 
   var params = new URLSearchParams(data).toString();
   var url = 'https://script.google.com/a/macros/salesforce.com/s/AKfycbyYNNuqB8sP6fgcXSjTO4zazBgYthTy7g33nvKR2o73CITaGRkaxMYu6gjKMhtcBgSgag/exec?' + params;
 
-  var script = document.createElement('script');
-  script.src = url;
-  script.onload = function() {
+  var img = new Image();
+  img.src = url;
+  setTimeout(function() {
     document.getElementById('form-container').style.display = 'none';
     document.getElementById('success').style.display = 'block';
-  };
-  script.onerror = function() {
-    document.getElementById('form-container').style.display = 'none';
-    document.getElementById('success').style.display = 'block';
-  };
-  document.body.appendChild(script);
+  }, 1500);
 });
 </script>
 
