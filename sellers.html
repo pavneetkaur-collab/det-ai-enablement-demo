@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Salesforce on Salesforce | Dreamforce 2026</title>
 <meta property="og:title" content="Your Customer Asks: How Does Salesforce Do It?">
-<meta property="og:description" content="75+ Salesforce on Salesforce activations at Dreamforce 2026. Sessions, demos, and content ready for your customer conversations.">
+<meta property="og:description" content="Salesforce on Salesforce at Dreamforce 2026. Sessions, demos, and content ready for your customer conversations.">
 <meta property="og:image" content="https://pavneetkaur-collab.github.io/det-ai-enablement-demo/sellers-teaser.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -24,16 +24,6 @@ body{font-family:'Salesforce Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',A
 .hero h1 span{color:#0176D3}
 .hero .sub{font-size:15px;color:#616061;line-height:1.55;max-width:580px;margin-top:10px}
 
-.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:28px 48px;border-bottom:1px solid #E2E8F0}
-.stat-card{background:#F7FAFC;border:1px solid #E2E8F0;border-radius:10px;padding:20px 22px;position:relative;overflow:hidden}
-.stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
-.stat-card:nth-child(1)::before{background:#0176D3}
-.stat-card:nth-child(2)::before{background:#04E1CB}
-.stat-card:nth-child(3)::before{background:#E8772E}
-.stat-card:nth-child(4)::before{background:#7C3AED}
-.stat-card .num{font-size:38px;font-weight:900;color:#032D60;line-height:1}
-.stat-card .label{font-size:10px;font-weight:700;color:#616061;text-transform:uppercase;letter-spacing:1px;margin-top:6px}
-
 .content{max-width:100%;padding:36px 48px 48px}
 
 .section{margin-bottom:40px}
@@ -43,21 +33,22 @@ body{font-family:'Salesforce Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',A
 .section-title{font-size:14px;font-weight:600;color:#616061;margin-bottom:6px}
 .section-sub{font-size:13px;color:#616061;margin-bottom:18px;line-height:1.5}
 
-.sessions-teaser{display:flex;flex-direction:column;gap:12px;margin-bottom:14px}
-.s-item{border:1px solid #E2E8F0;border-radius:10px;padding:18px 24px;border-left:4px solid;transition:all 0.15s;background:#FFFFFF}
-.s-item:hover{box-shadow:0 4px 16px rgba(0,0,0,0.06);transform:translateY(-1px)}
-.s-item:nth-child(1){border-left-color:#0176D3}
-.s-item:nth-child(2){border-left-color:#04E1CB}
-.s-item:nth-child(3){border-left-color:#E8772E}
-.s-item:nth-child(4){border-left-color:#7C3AED}
-.s-item:nth-child(5){border-left-color:#0176D3}
-.s-item:nth-child(6){border-left-color:#EC4899}
-.s-item:nth-child(7){border-left-color:#04E1CB}
-.s-item:nth-child(8){border-left-color:#E8772E}
-.s-item .type{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
-.s-item .type{color:#0176D3}
-.s-item .name{font-size:16px;font-weight:700;color:#032D60}
-.s-item .why{font-size:13px;color:#616061;margin-top:5px;line-height:1.45}
+.sessions-grid{display:flex;flex-direction:column;gap:20px;margin-bottom:14px}
+.session-category{border:1px solid #E2E8F0;border-radius:10px;padding:20px 24px;border-left:4px solid;background:#FFFFFF}
+.session-category:nth-child(1){border-left-color:#0176D3}
+.session-category:nth-child(2){border-left-color:#E8772E}
+.session-category:nth-child(3){border-left-color:#7C3AED}
+.session-category .cat-header{display:flex;align-items:baseline;gap:10px;margin-bottom:10px}
+.session-category .cat-type{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#0176D3}
+.session-category:nth-child(2) .cat-type{color:#E8772E}
+.session-category:nth-child(3) .cat-type{color:#7C3AED}
+.session-category .cat-count{font-size:24px;font-weight:900;color:#032D60}
+.session-category .cat-label{font-size:12px;font-weight:700;color:#616061;text-transform:uppercase;letter-spacing:0.5px}
+.session-category .examples{margin-top:8px}
+.session-category .example{font-size:13px;color:#032D60;line-height:1.5;padding:4px 0}
+.session-category .more-link{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;color:#0176D3;text-decoration:none;margin-top:8px}
+.session-category .more-link:hover{text-decoration:underline}
+
 .see-more{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:700;color:#fff;background:#0176D3;text-decoration:none;padding:12px 22px;border-radius:8px;margin-top:10px;transition:all 0.15s}
 .see-more:hover{background:#0B5CAB;transform:translateY(-1px);box-shadow:0 4px 12px rgba(1,118,211,0.3)}
 .see-more .arrow{font-size:18px;transition:transform 0.15s}
@@ -67,12 +58,10 @@ body{font-family:'Salesforce Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',A
 .res{display:flex;align-items:flex-start;gap:16px;border:1px solid #E2E8F0;border-radius:10px;padding:18px 22px;text-decoration:none;transition:all 0.15s;background:#FFFFFF}
 .res:hover{box-shadow:0 4px 16px rgba(0,0,0,0.06);border-color:#0176D3;transform:translateY(-1px)}
 .res-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;color:#fff;font-weight:800}
-.res-icon.hub{background:#0176D3}
 .res-icon.ch1{background:#00A88E}
 .res-icon.ch2{background:#7C3AED}
 .res-icon.wp1{background:#E8772E}
 .res-icon.wp2{background:#EC4899}
-.res-icon.lib{background:#032D60}
 .res-body{flex:1}
 .res-title{font-size:14px;font-weight:700;color:#032D60;margin-bottom:3px}
 .res-desc{font-size:12px;color:#616061;line-height:1.45}
@@ -87,109 +76,45 @@ body{font-family:'Salesforce Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',A
 <div class="hero">
   <div class="badge">Salesforce on Salesforce</div>
   <h1>Your Customer Asks:<br><span>"How Does Salesforce Do It?"</span></h1>
-  <div class="sub">75+ activations at Dreamforce 2026. Real stories, live demos, and content — ready for your customer conversations.</div>
-</div>
-
-<div class="stat-row">
-  <div class="stat-card"><div class="num">75+</div><div class="label">Total Activations</div></div>
-  <div class="stat-card"><div class="num">8</div><div class="label">Breakout Sessions</div></div>
-  <div class="stat-card"><div class="num">8</div><div class="label">Live Demos</div></div>
-  <div class="stat-card"><div class="num">21</div><div class="label">Campground Sessions</div></div>
+  <div class="sub">Resources and sessions to help you answer confidently — in customer conversations today, and at Dreamforce.</div>
 </div>
 
 <div class="content">
 
   <div class="section">
-    <div class="section-label blue">At Dreamforce</div>
-    <div class="section-title">Sessions You Can Bring Your Customers To</div>
-    <div class="section-sub">Real stories of how Salesforce uses its own products — bring your customers or point them here.</div>
-    <div class="sessions-teaser">
-      <div class="s-item">
-        <div class="type">Breakout Session</div>
-        <div class="name">How Salesforce Transforms Sales in the Agentic Enterprise</div>
-        <div class="why">Show your accounts how we're using Agentforce in our own sales motion.</div>
-      </div>
-      <div class="s-item">
-        <div class="type">Breakout Session</div>
-        <div class="name">How Salesforce Drives Customer Service with Agentforce</div>
-        <div class="why">For accounts investing in service — how we run Agentforce on our own support org.</div>
-      </div>
-      <div class="s-item">
-        <div class="type">Breakout Session</div>
-        <div class="name">How Salesforce Gets More Done Daily with Slack and Slackbot</div>
-        <div class="why">Customers always ask about productivity — Slack AI and Slackbot at enterprise scale.</div>
-      </div>
-      <div class="s-item">
-        <div class="type">Breakout Session</div>
-        <div class="name">How Salesforce Builds Smarter Agents with Data 360</div>
-        <div class="why">Data foundation story — how unified data makes agents smarter.</div>
-      </div>
-      <div class="s-item">
-        <div class="type">Breakout Session</div>
-        <div class="name">How Salesforce Makes Everyone a Builder with Headless 360</div>
-        <div class="why">Platform story — low-code agent building for every team.</div>
-      </div>
-      <div class="s-item">
-        <div class="type">Breakout Session</div>
-        <div class="name">How Salesforce is Transforming Marketing in the Agentic Era</div>
-        <div class="why">For marketing-led accounts — agentic campaigns in production.</div>
-      </div>
-      <div class="s-item">
-        <div class="type">Breakout Session</div>
-        <div class="name">How Salesforce Reinvents the Architecture of Work</div>
-        <div class="why">Big picture story — how the agentic enterprise changes how work gets done.</div>
-      </div>
-      <div class="s-item">
-        <div class="type">Breakout Session</div>
-        <div class="name">How Salesforce is Transforming HR with Agents</div>
-        <div class="why">For accounts exploring agents beyond CRM — workforce transformation use case.</div>
-      </div>
-    </div>
-    <a href="https://docs.google.com/presentation/d/19Qeh5Ynop8QtNTWHVzZCwy44-IkYaoSs26hJcZT9Cxw/edit?slide=id.g3f2596eaf21_0_1462#slide=id.g3f2596eaf21_0_1462" class="see-more">See full session details, descriptions, and schedule <span class="arrow">&rarr;</span></a>
-    <a href="https://reg.salesforce.com/flow/plus/df26/sessioncatalog/page/catalog?search.topic=1684280550105011B7po" class="see-more" style="background:#032D60;margin-top:8px">Browse the Dreamforce Session Catalog <span class="arrow">&rarr;</span></a>
-  </div>
-
-  <div class="section">
-    <div class="section-label teal">Your Content Toolkit</div>
-    <div class="section-title">Everything You Need — Ready to Share with Customers</div>
-    <div class="section-sub">Decks, white papers, leave-behinds, and talking points. Use these in customer meetings, SICs, and account conversations.</div>
+    <div class="section-label teal">What You Have Access to Today</div>
+    <div class="section-title">Ready to Use in Customer Conversations Right Now</div>
+    <div class="section-sub">Playbooks, leave-behinds, and white papers. Use these in customer meetings, SICs, and account conversations — no need to wait for Dreamforce.</div>
     <div class="resources">
-      <a href="https://salesforce.enterprise.slack.com/docs/T01G0063H29/F0AAG8CSLHX" class="res">
-        <div class="res-icon hub">&#9733;</div>
-        <div class="res-body">
-          <div class="res-title">Customer Zero Content Hub</div>
-          <div class="res-desc">Your one-stop canvas — decks, leave-behinds, and talking points sorted by customer AI maturity stage. Plus quick links to request a speaker for a customer meeting.</div>
-        </div>
-      </a>
-      <a href="https://docs.google.com/presentation/d/1bYN5RsRIUkSWRvZsNUIsISoklSCxs4vayAujzOkSV2w/edit?slide=id.g37016d44d37_0_0#slide=id.g37016d44d37_0_0" class="res">
+      <a href="https://docs.google.com/presentation/d/1bYN5RsRIUkSWRvZsNUIsISoklSCxs4vayAujzOkSV2w/edit?slide=id.g37016d44d37_0_0#slide=id.g37016d44d37_0_0" class="res" target="_blank">
         <div class="res-icon ch1">1</div>
         <div class="res-body">
           <div class="res-title">Agentic Enterprise Playbook (C0 Story Chapter 1)</div>
           <div class="res-desc">The core deck for the "Past the Pilot" stage — how Salesforce built its own agentic enterprise, for customers moving from pilot to production.</div>
         </div>
       </a>
-      <a href="https://docs.google.com/presentation/d/1xBVM5nI6w1WN9N98Hv8jM9i2_TEQ9bMqOd05rfwiBJI/edit?slide=id.g3d93277cc92_0_1075#slide=id.g3d93277cc92_0_1075" class="res">
+      <a href="https://docs.google.com/presentation/d/1xBVM5nI6w1WN9N98Hv8jM9i2_TEQ9bMqOd05rfwiBJI/edit?slide=id.g3d93277cc92_0_1075#slide=id.g3d93277cc92_0_1075" class="res" target="_blank">
         <div class="res-icon ch2">2</div>
         <div class="res-body">
           <div class="res-title">How Salesforce is Scaling the Agentic Enterprise (C0 Story Chapter 2)</div>
           <div class="res-desc">The follow-on deck for "Scaling Impact" — how we scaled the agentic enterprise across the whole company.</div>
         </div>
       </a>
-      <a href="https://www.salesforce.com/news/stories/ai-lessons-building-enterprise-agents/" class="res">
+      <a href="https://www.salesforce.com/news/stories/ai-lessons-building-enterprise-agents/" class="res" target="_blank">
         <div class="res-icon wp1">W</div>
         <div class="res-body">
           <div class="res-title">ADLC: Lessons</div>
           <div class="res-desc">Applied AI lessons from building agents in the enterprise.</div>
         </div>
       </a>
-      <a href="https://www.salesforce.com/news/stories/applied-ai-building-agents-playbook/" class="res">
+      <a href="https://www.salesforce.com/news/stories/applied-ai-building-agents-playbook/" class="res" target="_blank">
         <div class="res-icon wp2">W</div>
         <div class="res-body">
           <div class="res-title">ADLC: Full Framework</div>
           <div class="res-desc">The full ADLC framework: first principles, 6 core phases, and the new roles enterprises need to succeed.</div>
         </div>
       </a>
-      <a href="https://www.salesforce.com/blog/playbook/agentic-ai/" class="res">
+      <a href="https://www.salesforce.com/blog/playbook/agentic-ai/" class="res" target="_blank">
         <div class="res-icon ch1">&#9654;</div>
         <div class="res-body">
           <div class="res-title">Playbook: Become an Agentic Enterprise</div>
@@ -197,6 +122,48 @@ body{font-family:'Salesforce Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',A
         </div>
       </a>
     </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label blue">At Dreamforce</div>
+    <div class="section-title">See Us Live — Bring Your Customers</div>
+    <div class="section-sub">Salesforce on Salesforce has a dedicated presence across breakout sessions, live demos, and the campground. Here's a preview.</div>
+    <div class="sessions-grid">
+      <div class="session-category">
+        <div class="cat-header">
+          <span class="cat-count">8</span>
+          <span class="cat-label">Breakout Sessions</span>
+        </div>
+        <div class="examples">
+          <div class="example">&#8226; How Salesforce Transforms Sales in the Agentic Enterprise</div>
+          <div class="example">&#8226; How Salesforce Drives Customer Service with Agentforce</div>
+        </div>
+        <a href="https://docs.google.com/presentation/d/19Qeh5Ynop8QtNTWHVzZCwy44-IkYaoSs26hJcZT9Cxw/edit?slide=id.g3f2596eaf21_0_1462#slide=id.g3f2596eaf21_0_1462" class="more-link" target="_blank">See all 8 breakouts &rarr;</a>
+      </div>
+      <div class="session-category">
+        <div class="cat-header">
+          <span class="cat-count">8</span>
+          <span class="cat-label">Live Demos</span>
+        </div>
+        <div class="examples">
+          <div class="example">&#8226; Data 360</div>
+          <div class="example">&#8226; MuleSoft (Agent Fabric)</div>
+        </div>
+        <a href="https://docs.google.com/presentation/d/19Qeh5Ynop8QtNTWHVzZCwy44-IkYaoSs26hJcZT9Cxw/edit?slide=id.g3f2596eaf21_0_1462#slide=id.g3f2596eaf21_0_1462" class="more-link" target="_blank">See all 8 demos &rarr;</a>
+      </div>
+      <div class="session-category">
+        <div class="cat-header">
+          <span class="cat-count">21</span>
+          <span class="cat-label">Campground Sessions</span>
+        </div>
+        <div class="examples">
+          <div class="example">&#8226; How Salesforce Measures Business Value of Agentforce on Help</div>
+          <div class="example">&#8226; How Salesforce Powers Renewals with Agents</div>
+        </div>
+        <a href="https://docs.google.com/presentation/d/19Qeh5Ynop8QtNTWHVzZCwy44-IkYaoSs26hJcZT9Cxw/edit?slide=id.g3f2596eaf21_0_1462#slide=id.g3f2596eaf21_0_1462" class="more-link" target="_blank">See all 21 campground sessions &rarr;</a>
+      </div>
+    </div>
+    <a href="https://reg.salesforce.com/flow/plus/df26/sessioncatalog/page/catalog?search.topic=1684280550105011B7po" class="see-more" target="_blank">Explore the Salesforce on Salesforce Dreamforce Agenda Catalog <span class="arrow">&rarr;</span></a>
   </div>
 
 </div>
