@@ -49,7 +49,6 @@ textarea{min-height:120px;resize:vertical}
     <select id="feedback-type" name="feedback_type">
       <option value="">Select...</option>
       <option value="content-request">I need content on a topic not covered</option>
-      <option value="session-suggestion">Session or demo suggestion for Dreamforce</option>
       <option value="improvement">Improvement to existing content</option>
       <option value="customer-story">I have a customer story to share</option>
       <option value="other">Other</option>
@@ -58,12 +57,6 @@ textarea{min-height:120px;resize:vertical}
     <label for="details">Tell us more</label>
     <textarea id="details" name="details" required placeholder="What would help you in customer conversations? What are customers asking that we're not covering?"></textarea>
 
-    <label for="urgency">How urgent is this?</label>
-    <select id="urgency" name="urgency">
-      <option value="before-df">Need it before Dreamforce</option>
-      <option value="at-df">Would be great to have at Dreamforce</option>
-      <option value="ongoing">Ongoing / no rush</option>
-    </select>
 
     <div class="error-msg" id="error-msg">Something went wrong. Please try posting in #customer-zero-seller-enablement instead.</div>
     <button type="submit" class="btn">Submit Feedback</button>
