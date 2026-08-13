@@ -75,22 +75,36 @@ textarea{min-height:120px;resize:vertical}
   <p>Your input has been sent to the Customer Zero team. We'll review it and follow up if needed.</p>
 </div>
 
-<iframe name="hidden-iframe" id="hidden-iframe" style="display:none"></iframe>
-
 <script>
-var form = document.getElementById('feedback-form');
-form.action = 'https://script.google.com/a/macros/salesforce.com/s/AKfycbyYNNuqB8sP6fgcXSjTO4zazBgYthTy7g33nvKR2o73CITaGRkaxMYu6gjKMhtcBgSgag/exec';
-form.method = 'GET';
-form.target = 'hidden-iframe';
-
-form.addEventListener('submit', function() {
+document.getElementById('feedback-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var form = e.target;
   var btn = form.querySelector('.btn');
   btn.textContent = 'Submitting...';
   btn.disabled = true;
-  setTimeout(function() {
+
+  var data = {
+    name: form.name.value,
+    role: form.role.value,
+    feedback_type: form.feedback_type.value,
+    details: form.details.value,
+    urgency: form.urgency.value
+  };
+
+  var params = new URLSearchParams(data).toString();
+  var url = 'https://script.google.com/a/macros/salesforce.com/s/AKfycbyYNNuqB8sP6fgcXSjTO4zazBgYthTy7g33nvKR2o73CITaGRkaxMYu6gjKMhtcBgSgag/exec?' + params;
+
+  var script = document.createElement('script');
+  script.src = url;
+  script.onload = function() {
     document.getElementById('form-container').style.display = 'none';
     document.getElementById('success').style.display = 'block';
-  }, 2000);
+  };
+  script.onerror = function() {
+    document.getElementById('form-container').style.display = 'none';
+    document.getElementById('success').style.display = 'block';
+  };
+  document.body.appendChild(script);
 });
 </script>
 
