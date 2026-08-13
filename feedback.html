@@ -92,11 +92,10 @@ document.getElementById('feedback-form').addEventListener('submit', async functi
   };
 
   try {
-    await fetch('https://script.google.com/a/macros/salesforce.com/s/AKfycbyYNNuqB8sP6fgcXSjTO4zazBgYthTy7g33nvKR2o73CITaGRkaxMYu6gjKMhtcBgSgag/exec', {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(data)
+    const params = new URLSearchParams(data).toString();
+    await fetch('https://script.google.com/a/macros/salesforce.com/s/AKfycbyYNNuqB8sP6fgcXSjTO4zazBgYthTy7g33nvKR2o73CITaGRkaxMYu6gjKMhtcBgSgag/exec?' + params, {
+      method: 'GET',
+      mode: 'no-cors'
     });
     document.getElementById('form-container').style.display = 'none';
     document.getElementById('success').style.display = 'block';
